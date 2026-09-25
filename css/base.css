@@ -1,0 +1,91 @@
+/* ==========================================================================
+   Veritas — Design Tokens
+   ========================================================================== */
+
+   :root {
+    /* Brand colors (from logo) */
+    --color-ink: #1A1A17;      /* near-black — primary text on light */
+    --color-graphite: #3F403C; /* dark grey — secondary text on light */
+  
+    /* Reference site colors */
+    --color-cream: #F4F3EA;    /* rgb(244,243,234) — text on dark sections */
+    --color-black: #000000;
+    --color-white: #FFFFFF;
+    --color-bg-dark: #0F0E0E;  /* primary dark section background */
+    --color-muted: #BCBFB5;    /* muted grey — secondary text on dark */
+    --color-accent: #B6E41B;   /* acid lime — accent + button hover */
+  
+    /* Fonts */
+    --font-display: 'Merriweather', Georgia, serif;
+    --font-body: '42dot Sans', Arial, sans-serif;
+  
+    /* Type scale — headings (Merriweather 400) */
+    --h1-size: 60px;
+    --h1-line: 84px;
+    --h2-size: 48px;
+    --h2-line: 53px;
+    --h3-size: 32px;
+    --h3-line: 38px;
+  
+    /* Type scale — body/UI (42dot Sans) */
+    --body-size: 16px;
+    --body-line: 24px;
+    --label-size: 12px;
+    --label-line: 18px;
+    --micro-size: 10px;
+    --micro-line: 15px;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: env(safe-area-inset-top, 0px);
+  }
+  
+  body {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: var(--body-size);
+    line-height: var(--body-line);
+    color: var(--color-ink);
+    background: var(--color-white);
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    color: inherit;
+  }
+  
+  h1 { font-size: var(--h1-size); line-height: var(--h1-line); }
+  h2 { font-size: var(--h2-size); line-height: var(--h2-line); }
+  h3 { font-size: var(--h3-size); line-height: var(--h3-line); }
+  
+  img { max-width: 100%; display: block; }
+  
+  a { color: inherit; text-decoration: none; }
+  
+  .container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  
+  @media (max-width: 640px) {
+    :root {
+      --h1-size: 36px;
+      --h1-line: 46px;
+      --h2-size: 30px;
+      --h2-line: 38px;
+      --h3-size: 22px;
+      --h3-line: 28px;
+    }
+    .container { padding: 0 20px; }
+  }
