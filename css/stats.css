@@ -1,0 +1,70 @@
+/* ==========================================================================
+   Stats / Logos section
+   ========================================================================== */
+
+   .stats {
+    background: var(--color-bg-dark);
+    padding: 80px 0 0;
+  }
+  
+  /* shared eyebrow already defined in hero.css, .center modifier below */
+  .eyebrow.center {
+    justify-content: center;
+    margin-bottom: 32px;
+  }
+  
+  .logos-block {
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(244, 243, 234, 0.12);
+  }
+  
+  .logos-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 56px;
+  }
+  
+  .logo-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-muted);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 22px;
+  }
+  
+  .logo-icon { color: var(--color-muted); flex: none; }
+  
+  .stat-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    column-gap: 24px;
+    padding: 44px 0;
+    border-bottom: 1px solid rgba(244, 243, 234, 0.12);
+  }
+  
+  .stat-row .eyebrow { margin-bottom: 0; }
+  
+  .stat-row h2 {
+    color: var(--color-cream);
+    font-size: 64px;
+    line-height: 1.15;
+  }
+  
+  @media (max-width: 900px) {
+    .stat-row {
+      grid-template-columns: 1fr;
+      row-gap: 16px;
+      padding: 32px 0;
+    }
+    .stat-row h2 { font-size: 44px; }
+    .logos-row { gap: 32px; flex-wrap: wrap; }
+  }
+  
+  @media (max-width: 640px) {
+    .stats { padding-top: 56px; }
+    .stat-row h2 { font-size: 36px; }
+  }
