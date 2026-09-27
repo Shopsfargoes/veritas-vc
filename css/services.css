@@ -1,0 +1,101 @@
+/* ==========================================================================
+   Services — "What's included" bento grid
+   ========================================================================== */
+
+   .services {
+    background: var(--color-bg-dark);
+    padding: 64px 0 100px;
+  }
+  
+  .services-title { color: var(--color-cream); margin-top: 16px; margin-bottom: 48px; }
+  
+  .services-grid {
+    display: flex;
+    align-items: stretch;
+    gap: 14px;
+  }
+  
+  .col {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex: 1;
+  }
+  
+  /* column 3: top card 2x taller than bottom card (Banking / Portfolio support) */
+  .col-3 .card-tall { flex: 2; }
+  .col-3 .card-short { flex: 1; }
+  
+  .card {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 260px;
+  }
+  
+  /* Solid, no-image cards */
+  .card-solid {
+    background: #263A38;
+    justify-content: flex-start;
+    flex: 1;
+  }
+  
+  /* Image-backed cards */
+  .card-image { flex: 1; color: var(--color-cream); }
+  
+  .card-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  
+  .card-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(15,14,14,0) 40%, rgba(15,14,14,0.85) 100%);
+  }
+  
+  .card-content {
+    position: relative;
+    z-index: 2;
+    padding: 32px;
+  }
+  
+  .card-content h3 {
+    font-size: 28px;
+    line-height: 1.2;
+    margin-bottom: 12px;
+    color: var(--color-cream);
+  }
+  
+  .card-content p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--color-cream);
+    opacity: 0.75;
+    max-width: 34ch;
+  }
+  
+  .card-solid .card-content p { opacity: 0.65; }
+  
+  /* Placeholder image background — swap for a real <img>/background-image later */
+  .img-placeholder {
+    background:
+      linear-gradient(135deg, rgba(244,243,234,0.06) 25%, transparent 25%) 0 0/24px 24px,
+      linear-gradient(315deg, rgba(244,243,234,0.06) 25%, transparent 25%) 0 0/24px 24px,
+      linear-gradient(160deg, #2C4A4E 0%, #1B2E31 100%);
+  }
+  
+  /* ==========================================================================
+     Responsive
+     ========================================================================== */
+  
+  @media (max-width: 900px) {
+    .services-grid { flex-direction: column; }
+    .col { flex: none; }
+    .card, .card-solid, .card-image { min-height: 220px; }
+  }
