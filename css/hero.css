@@ -75,16 +75,24 @@
      Hero
      ========================================================================== */
   
-  .hero {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: flex-end;
-    background: var(--color-bg-dark) url('../assets/images/hero-bg.avif') center center / cover no-repeat;
-    padding-bottom: 120px;
-    overflow: hidden;
-  }
-  
+     .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      background: var(--color-bg-dark) url('../assets/images/hero-bg.avif') center center / cover no-repeat;
+      background-attachment: fixed;
+      padding-bottom: 120px;
+      overflow: hidden;
+    }
+    
+    /* iOS Safari ignores background-attachment: fixed on the body/viewport in
+       some versions — this keeps the image locked to the section itself so the
+       parallax effect still reads correctly there. */
+    @supports (-webkit-touch-callout: none) {
+      .hero { background-attachment: scroll; }
+    }
+    
   .hero-overlay {
     position: absolute;
     inset: 0;

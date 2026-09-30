@@ -16,9 +16,10 @@
 <link rel="stylesheet" href="css/faq.css">
 <link rel="stylesheet" href="css/insights.css">
 <link rel="stylesheet" href="css/footer.css">
+<link rel="stylesheet" href="css/animations.css">
 </head>
 <body>
-
+<div class="scroll-progress" id="scrollProgress"></div>
 <header class="navbar">
   <div class="navbar-inner">
     <a href="#" class="logo">
@@ -36,15 +37,15 @@
 <section class="hero">
   <div class="hero-overlay"></div>
   <div class="container hero-inner">
-    <div class="hero-divider"></div>
+    <div class="hero-divider hero-load" style="--hero-delay:0.1s"></div>
     <div class="hero-row">
       <div class="hero-left">
-        <p class="eyebrow"><span class="dot"></span>Strategic capital. Enduring value.</p>
-        <h1>Capital builds<br>enduring value</h1>
+        <p class="eyebrow hero-load" style="--hero-delay:0.25s"><span class="dot"></span>Strategic capital. Enduring value.</p>
+        <h1 class="hero-load" style="--hero-delay:0.4s">Capital builds<br>enduring value</h1>
       </div>
       <div class="hero-right">
-        <p>We partner with founders, institutions, and enterprises to deploy capital with clarity, discipline, and long-term.</p>
-        <a href="#invest" class="btn btn-white">Start investing</a>
+        <p class="hero-load" style="--hero-delay:0.55s">We partner with founders, institutions, and enterprises to deploy capital with clarity, discipline, and long-term.</p>
+        <a href="#invest" class="btn btn-white hero-load" style="--hero-delay:0.7s">Start investing</a>
       </div>
     </div>
   </div>
@@ -53,37 +54,47 @@
 <section class="stats">
   <div class="container">
 
-    <div class="logos-block">
+    <div class="logos-block reveal">
       <p class="eyebrow center"><span class="dot"></span>Companies we worked with</p>
       <div class="logos-row">
-        <div class="logo-item">
-          <svg class="logo-icon" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="11" cy="14" r="8" stroke="currentColor" stroke-width="2"/>
-            <circle cx="19" cy="14" r="8" stroke="currentColor" stroke-width="2"/>
-          </svg>
-          <span>kanba</span>
+        <div class="logos-track">
+          <div class="logo-item">
+            <svg class="logo-icon" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="11" cy="14" r="8" stroke="currentColor" stroke-width="2"/>
+              <circle cx="19" cy="14" r="8" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            <span>kanba</span>
+          </div>
+          <!-- duplicated for a seamless marquee loop -->
+          <div class="logo-item" aria-hidden="true">
+            <svg class="logo-icon" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="11" cy="14" r="8" stroke="currentColor" stroke-width="2"/>
+              <circle cx="19" cy="14" r="8" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            <span>kanba</span>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="stat-row">
+    <div class="stat-row reveal" style="--reveal-delay:0s">
       <p class="eyebrow"><span class="dot"></span>Capital advised &amp; deployed</p>
-      <h2>$1.2B+</h2>
+      <h2 data-count>$1.2B+</h2>
     </div>
 
-    <div class="stat-row">
+    <div class="stat-row reveal" style="--reveal-delay:0.08s">
       <p class="eyebrow"><span class="dot"></span>Founder-led companies supported</p>
-      <h2>40+</h2>
+      <h2 data-count>40+</h2>
     </div>
 
-    <div class="stat-row">
+    <div class="stat-row reveal" style="--reveal-delay:0.16s">
       <p class="eyebrow"><span class="dot"></span>Investment &amp; operating experience</p>
-      <h2>10+ Years</h2>
+      <h2 data-count>10+ Years</h2>
     </div>
 
-    <div class="stat-row">
+    <div class="stat-row reveal" style="--reveal-delay:0.24s">
       <p class="eyebrow"><span class="dot"></span>Portfolio &amp; advisory engagements</p>
-      <h2>25+</h2>
+      <h2 data-count>25+</h2>
     </div>
 
   </div>
@@ -91,13 +102,13 @@
 
 <section class="services">
   <div class="container">
-    <p class="eyebrow"><span class="dot"></span>Service</p>
-    <h2 class="services-title">What&rsquo;s included</h2>
+    <p class="eyebrow reveal"><span class="dot"></span>Service</p>
+    <h2 class="services-title reveal" style="--reveal-delay:0.08s">What&rsquo;s included</h2>
 
     <div class="services-grid">
 
       <div class="col col-1">
-        <article class="card card-image">
+        <article class="card card-image reveal" style="--reveal-delay:0s">
           <div class="card-bg img-placeholder"></div>
           <div class="card-overlay"></div>
           <div class="card-content">
@@ -108,13 +119,13 @@
       </div>
 
       <div class="col col-2">
-        <article class="card card-solid">
+        <article class="card card-solid reveal" style="--reveal-delay:0.1s">
           <div class="card-content">
             <h3>Venture &amp; capital</h3>
             <p>We partner with founders and management teams to support expansion, innovation, and market leadership through aligned capital and strategic guidance.</p>
           </div>
         </article>
-        <article class="card card-image">
+        <article class="card card-image reveal" style="--reveal-delay:0.2s">
           <div class="card-bg img-placeholder"></div>
           <div class="card-overlay"></div>
           <div class="card-content">
@@ -125,7 +136,7 @@
       </div>
 
       <div class="col col-3">
-        <article class="card card-image card-tall">
+        <article class="card card-image card-tall reveal" style="--reveal-delay:0.15s">
           <div class="card-bg img-placeholder"></div>
           <div class="card-overlay"></div>
           <div class="card-content">
@@ -133,7 +144,61 @@
             <p>Tailored capital solutions designed to support scale, resilience, and balance sheet optimization.</p>
           </div>
         </article>
-        <article class="card card-solid card-short">
+        <article class="card card-solid card-short reveal" style="--reveal-delay:0.25s">
+          <div class="card-content">
+            <h3>Portfolio support</h3>
+            <p>Beyond capital, we partner actively to help businesses scale with clarity and discipline.</p>
+          </div>
+        </article>
+      </div>
+
+    </div>
+  </div>
+</section><section class="services">
+  <div class="container">
+    <p class="eyebrow reveal"><span class="dot"></span>Service</p>
+    <h2 class="services-title reveal" style="--reveal-delay:0.08s">What&rsquo;s included</h2>
+
+    <div class="services-grid">
+
+      <div class="col col-1">
+        <article class="card card-image reveal" style="--reveal-delay:0s">
+          <div class="card-bg img-placeholder"></div>
+          <div class="card-overlay"></div>
+          <div class="card-content">
+            <h3>Investment management</h3>
+            <p>We deploy capital with a disciplined, long-term mindset—focusing on fundamentals, alignment, sustainable value creation across market cycles.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="col col-2">
+        <article class="card card-solid reveal" style="--reveal-delay:0.1s">
+          <div class="card-content">
+            <h3>Venture &amp; capital</h3>
+            <p>We partner with founders and management teams to support expansion, innovation, and market leadership through aligned capital and strategic guidance.</p>
+          </div>
+        </article>
+        <article class="card card-image reveal" style="--reveal-delay:0.2s">
+          <div class="card-bg img-placeholder"></div>
+          <div class="card-overlay"></div>
+          <div class="card-content">
+            <h3>Strategic advisory</h3>
+            <p>We advise founders, boards, and institutions on complex capital and growth decisions, combining financial rigor with real-world operating insight.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="col col-3">
+        <article class="card card-image card-tall reveal" style="--reveal-delay:0.15s">
+          <div class="card-bg img-placeholder"></div>
+          <div class="card-overlay"></div>
+          <div class="card-content">
+            <h3>Banking &amp; capital solutions</h3>
+            <p>Tailored capital solutions designed to support scale, resilience, and balance sheet optimization.</p>
+          </div>
+        </article>
+        <article class="card card-solid card-short reveal" style="--reveal-delay:0.25s">
           <div class="card-content">
             <h3>Portfolio support</h3>
             <p>Beyond capital, we partner actively to help businesses scale with clarity and discipline.</p>
@@ -148,19 +213,19 @@
 <section class="projects">
   <div class="container projects-grid">
 
-    <div class="projects-image">
+    <div class="projects-image reveal-scale">
       <div class="img-placeholder"></div>
     </div>
 
     <div class="projects-content">
       <div class="projects-top-divider"></div>
-      <p class="eyebrow dark"><span class="dot"></span>Selected projects</p>
-      <h2>Capital deployed<br>with purpose</h2>
-      <a href="#quote" class="btn btn-outline">Get a Quote</a>
+      <p class="eyebrow dark reveal"><span class="dot"></span>Selected projects</p>
+      <h2 class="reveal" style="--reveal-delay:0.08s">Capital deployed<br>with purpose</h2>
+      <a href="#quote" class="btn btn-outline reveal" style="--reveal-delay:0.16s">Get a Quote</a>
 
       <div class="accordion">
 
-        <div class="accordion-item is-active">
+        <div class="accordion-item is-active reveal" style="--reveal-delay:0.1s">
           <button class="accordion-trigger" type="button">
             <span>Capital Raise &amp; Strategic Positioning</span>
           </button>
@@ -169,7 +234,7 @@
           </div>
         </div>
 
-        <div class="accordion-item">
+        <div class="accordion-item reveal" style="--reveal-delay:0.18s">
           <button class="accordion-trigger" type="button">
             <span>Strategic Sale Process</span>
           </button>
@@ -178,7 +243,7 @@
           </div>
         </div>
 
-        <div class="accordion-item">
+        <div class="accordion-item reveal" style="--reveal-delay:0.26s">
           <button class="accordion-trigger" type="button">
             <span>Minority Growth Investment</span>
           </button>
@@ -195,13 +260,13 @@
 
 <section class="testimonials">
   <div class="container">
-    <p class="eyebrow"><span class="dot"></span>Testimonial</p>
-    <h2 class="testimonials-title">Feedback from our investment<br>and advisory partners.</h2>
-    <p class="testimonials-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p class="eyebrow reveal"><span class="dot"></span>Testimonial</p>
+    <h2 class="testimonials-title reveal" style="--reveal-delay:0.08s">Feedback from our investment<br>and advisory partners.</h2>
+    <p class="testimonials-subtitle reveal" style="--reveal-delay:0.16s">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
     <div class="testimonials-track" id="testimonialsTrack">
 
-      <article class="testimonial-card">
+      <article class="testimonial-card reveal" style="--reveal-delay:0s">
         <div class="card-bg img-placeholder"></div>
         <div class="card-overlay"></div>
         <div class="testimonial-logo">
@@ -223,7 +288,7 @@
         </div>
       </article>
 
-      <article class="testimonial-card">
+      <article class="testimonial-card reveal" style="--reveal-delay:0.1s">
         <div class="card-bg img-placeholder"></div>
         <div class="card-overlay"></div>
         <div class="testimonial-logo">
@@ -243,7 +308,7 @@
         </div>
       </article>
 
-      <article class="testimonial-card">
+      <article class="testimonial-card reveal" style="--reveal-delay:0.2s">
         <div class="card-bg img-placeholder"></div>
         <div class="card-overlay"></div>
         <div class="testimonial-logo">
@@ -281,15 +346,15 @@
 
     <div class="faq-intro">
       <div class="faq-top-divider"></div>
-      <p class="eyebrow dark"><span class="dot"></span>FAQ</p>
-      <h2>Clarity before<br>commitment</h2>
-      <p class="faq-desc">We believe informed decisions lead to better partnerships. Below are answers to questions we&rsquo;re often asked.</p>
-      <a href="#quote" class="btn btn-outline">Get a Quote</a>
+      <p class="eyebrow dark reveal"><span class="dot"></span>FAQ</p>
+      <h2 class="reveal" style="--reveal-delay:0.08s">Clarity before<br>commitment</h2>
+      <p class="faq-desc reveal" style="--reveal-delay:0.16s">We believe informed decisions lead to better partnerships. Below are answers to questions we&rsquo;re often asked.</p>
+      <a href="#quote" class="btn btn-outline reveal" style="--reveal-delay:0.24s">Get a Quote</a>
     </div>
 
     <div class="faq-list">
 
-      <div class="faq-item">
+      <div class="faq-item reveal" style="--reveal-delay:0s">
         <button class="faq-trigger" type="button">
           <span>What types of companies do you work with?</span>
           <span class="faq-icon" aria-hidden="true"></span>
@@ -299,7 +364,7 @@
         </div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item reveal" style="--reveal-delay:0.06s">
         <button class="faq-trigger" type="button">
           <span>What sectors do you focus on?</span>
           <span class="faq-icon" aria-hidden="true"></span>
@@ -309,7 +374,7 @@
         </div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item reveal" style="--reveal-delay:0.12s">
         <button class="faq-trigger" type="button">
           <span>Do you invest directly or only provide advisory services?</span>
           <span class="faq-icon" aria-hidden="true"></span>
@@ -319,7 +384,7 @@
         </div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item reveal" style="--reveal-delay:0.18s">
         <button class="faq-trigger" type="button">
           <span>What is your typical investment horizon?</span>
           <span class="faq-icon" aria-hidden="true"></span>
@@ -329,7 +394,7 @@
         </div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item reveal" style="--reveal-delay:0.24s">
         <button class="faq-trigger" type="button">
           <span>What stage do you typically invest in?</span>
           <span class="faq-icon" aria-hidden="true"></span>
@@ -339,7 +404,7 @@
         </div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item reveal" style="--reveal-delay:0.3s">
         <button class="faq-trigger" type="button">
           <span>How involved are you after an investment?</span>
           <span class="faq-icon" aria-hidden="true"></span>
@@ -357,19 +422,19 @@
 <section class="insights">
   <div class="container">
     <div class="insights-top-divider"></div>
-    <p class="eyebrow dark"><span class="dot"></span>Insights &amp; Perspectives</p>
-    <h2 class="insights-title">Perspectives on capital growth</h2>
+    <p class="eyebrow dark reveal"><span class="dot"></span>Insights &amp; Perspectives</p>
+    <h2 class="insights-title reveal" style="--reveal-delay:0.08s">Perspectives on capital growth</h2>
 
     <div class="insights-grid">
 
-      <article class="insight-card">
+      <article class="insight-card reveal" style="--reveal-delay:0s">
         <div class="insight-image img-placeholder"></div>
         <p class="eyebrow dark"><span class="dot"></span>January 20, 2026</p>
         <h3>Investing Through Market Cycles: Why Discipline Outperforms Timing</h3>
         <p>We believe informed decisions lead to better partnerships. Below are answers to questions we&rsquo;re often asked.</p>
       </article>
 
-      <article class="insight-card">
+      <article class="insight-card reveal" style="--reveal-delay:0.1s">
         <div class="insight-image img-placeholder"></div>
         <p class="eyebrow dark"><span class="dot"></span>January 20, 2026</p>
         <h3>Structuring Capital for Sustainable Growth: Beyond Equity vs. Debt</h3>
@@ -387,17 +452,17 @@
     <div class="card-overlay"></div>
     <div class="container cta-content">
       <div class="cta-top-divider"></div>
-      <p class="eyebrow"><span class="dot"></span>Next stage of growth</p>
-      <h2>Strategic capital starts<br>with a conversation</h2>
-      <a href="#invest" class="btn btn-white">Start investing</a>
+      <p class="eyebrow reveal"><span class="dot"></span>Next stage of growth</p>
+      <h2 class="reveal" style="--reveal-delay:0.08s">Strategic capital starts<br>with a conversation</h2>
+      <a href="#invest" class="btn btn-white reveal" style="--reveal-delay:0.16s">Start investing</a>
     </div>
   </div>
 
   <footer class="site-footer">
     <div class="container footer-top">
 
-      <div class="footer-brand">
-        <img src="assets/images/logo-veritas.svg" alt="Veritas" class="footer-logo">
+      <div class="footer-brand reveal">
+        <img src="assets/images/logo-veritas.svg" alt="Veritas" class="footer-logo" loading="lazy" decoding="async">
 
         <div class="footer-info">
           <p class="footer-label">ADDRESS:</p>
@@ -423,7 +488,7 @@
         </div>
       </div>
 
-      <nav class="footer-nav">
+      <nav class="footer-nav reveal" style="--reveal-delay:0.1s">
         <div class="footer-nav-col">
           <a href="#">Home</a>
           <a href="#">Our Services</a>
